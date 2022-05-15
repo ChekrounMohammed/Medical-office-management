@@ -56,7 +56,7 @@ ________________________________________________________________________________
 
  - Employee management is only valid for "the super user" by:
 
-   ** the username "secretary".
+   ** the username "secretaire".
    ** the password "mohammed".
 
    This application allows the "super user" to create, display, modify and delete
