@@ -1,0 +1,46 @@
+# Project: projetProg
+# Makefile created by Dev-C++ 5.9.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Menumain.o fichier.o patient.o CertificatMed.o rdv.o employe.o
+LINKOBJ  = main.o Menumain.o fichier.o patient.o CertificatMed.o rdv.o employe.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = projetProg.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+Menumain.o: Menumain.c
+	$(CC) -c Menumain.c -o Menumain.o $(CFLAGS)
+
+fichier.o: fichier.c
+	$(CC) -c fichier.c -o fichier.o $(CFLAGS)
+
+patient.o: patient.c
+	$(CC) -c patient.c -o patient.o $(CFLAGS)
+
+CertificatMed.o: CertificatMed.c
+	$(CC) -c CertificatMed.c -o CertificatMed.o $(CFLAGS)
+
+rdv.o: rdv.c
+	$(CC) -c rdv.c -o rdv.o $(CFLAGS)
+
+employe.o: employe.c
+	$(CC) -c employe.c -o employe.o $(CFLAGS)
